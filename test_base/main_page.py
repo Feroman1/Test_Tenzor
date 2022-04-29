@@ -52,8 +52,10 @@ class MainPage(BasePage):
         ImagePage.should_be_open_image(self)
         firstimage_src = self.browser.find_element(*ImagePageLocators.CENTER_IMAGE).get_attribute('src')
         self.browser.find_element(*ImagePageLocators.NEXT_BUTTON).click()
+        ImagePage.should_be_open_image(self)
         secondimage_src = self.browser.find_element(*ImagePageLocators.CENTER_IMAGE).get_attribute('src')
         assert (firstimage_src != secondimage_src), "The same photo(То же самое фото)"
         self.browser.find_element(*ImagePageLocators.PREV_BUTTON).click()
+        ImagePage.should_be_open_image(self)
         previmage_src = self.browser.find_element(*ImagePageLocators.CENTER_IMAGE).get_attribute('src')
         assert (firstimage_src == previmage_src), "Different images(Разные фото)"

@@ -13,4 +13,4 @@ class ImagePage(BasePage):
         assert self.is_element_present(ImagePageLocators.CATEGORY_LINK), "The searc bar not found!(поисковая строка не найдена)"
 
     def should_be_open_image(self):
-        assert self.is_element_present(ImagePageLocators.CENTER_IMAGE), "The first image not found!(Первое фото не появилось)"
+        assert self.is_element_present(ImagePageLocators.CENTER_IMAGE), "The image not found!(Фото не появилось)"
